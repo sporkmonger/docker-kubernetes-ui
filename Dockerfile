@@ -4,7 +4,9 @@ MAINTAINER Bob Aman <bob@sporkmonger.com>
 ENV VERSION=v1.0.0
 
 # Install NodeJS & dependencies
-RUN apk add --update git nodejs && \
+RUN apk add nodejs=0.10.40-r0 && \
+  apk add --update git && \
+  apk upgrade && \
   rm -rf /var/cache/apk/*
 
 # Add confd files
